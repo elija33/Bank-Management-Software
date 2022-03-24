@@ -66,6 +66,9 @@ public class BankSoftware {
 		int account = accountnumer.nextInt(upperbond);	
 	}
 	
+	/**
+	 * @return account
+	 */
 	public long getaccountroutingnumber() {
 		return accountroutingnumber;
 	}
@@ -131,8 +134,8 @@ public class BankSoftware {
 	/**
 	 * @param checkBalance the checkBalance to set
 	 */
-	public void setCheckBalance(int checkBalance) {
-		this.checkBalance = checkBalance;
+	public void setCheckBalance() {
+		System.out.println("Your Current Balance is: " + checkBalance);
 	}
 	
 }

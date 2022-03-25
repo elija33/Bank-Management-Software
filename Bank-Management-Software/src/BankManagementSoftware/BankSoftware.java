@@ -12,9 +12,9 @@ public class BankSoftware {
 	private long accountroutingnumber;
 	
 	//This is filed is the users bank 
-	private int AccountWithdraw;
-	private double AccountBalance;
-	private int AccountDeposit;
+	private int accountWithdraw;
+	private double accountBalance;
+	private int accountDeposit;
 	private int checkBalance;
 	
 	//Constructor for users log in information
@@ -27,9 +27,9 @@ public class BankSoftware {
 	//Constructor for user bank
 	public BankSoftware(int accountWithdraw, double accountBalance, int accountDeposit, int checkBalance) {
 		super();
-		AccountWithdraw = accountWithdraw;
-		AccountBalance = accountBalance;
-		AccountDeposit = accountDeposit;
+		accountWithdraw = accountWithdraw;
+		accountBalance = accountBalance;
+		accountDeposit = accountDeposit;
 		this.checkBalance = checkBalance;
 	}
 	
@@ -64,6 +64,7 @@ public class BankSoftware {
 		Random accountnumer = new Random();
 		int upperbond = 9; // set if the number is more than 8
 		int account = accountnumer.nextInt(upperbond);	
+		System.out.println("Enter your account number is: " + account);
 	}
 	
 	/**
@@ -80,48 +81,62 @@ public class BankSoftware {
 		Random accountroutingnumber = new Random();
 		int upper = 9; // set if the number is more than 8
 		int routing = accountroutingnumber.nextInt(upper);	
+		System.out.println("Your routing number is: " + routing);
 	}
 
 	/**
 	 * @return the accountWithdraw
 	 */
 	public int getAccountWithdraw() {
-		return AccountWithdraw;
+		return accountWithdraw;
 	}
 
 	/**
 	 * @param accountWithdraw the accountWithdraw to set
 	 */
 	public void setAccountWithdraw(int accountWithdraw) {
-		AccountWithdraw = accountWithdraw;
+		int currentbalance = (int) accountBalance;
+		Scanner withding = new Scanner(System.in);
+		System.out.println("Enter amout :");
+		int accountwithding = withding.nextInt();
+		if(currentbalance == 0) {
+			System.out.println("There is no sufficient Amount");
+		}
+		else if(currentbalance > accountwithding){
+			System.out.println("You do not have enough money in your account");
+		}
+		else if(currentbalance <= accountwithding) {
+			System.out.println("You can take your money");
+			System.out.println("Do not forget your card" );
+		}
 	}
 
 	/**
 	 * @return the accountBalance
 	 */
 	public double getAccountBalance() {
-		return AccountBalance;
+		return accountBalance;
 	}
 
 	/**
 	 * @param accountBalance the accountBalance to set
 	 */
 	public void setAccountBalance(int accountBalance) {
-		AccountBalance = accountBalance;
+		accountBalance = accountBalance;
 	}
 
 	/**
 	 * @return the accountDeposit
 	 */
 	public int getAccountDeposit() {
-		return AccountDeposit;
+		return accountDeposit;
 	}
 
 	/**
 	 * @param accountDeposit the accountDeposit to set
 	 */
 	public void setAccountDeposit(int accountDeposit) {
-		AccountDeposit = accountDeposit;
+		accountDeposit = accountDeposit;
 	}
 
 	/**

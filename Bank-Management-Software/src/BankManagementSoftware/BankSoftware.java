@@ -45,7 +45,7 @@ public class BankSoftware {
 	 */
 	public void setName(String name) {
 		Scanner user_input = new Scanner(System.in);
-		String full_name;
+		String full_name = " ";
 		System.out.print("Enter you Full name: ");
 		full_name =  user_input.next();
 	}
@@ -123,6 +123,7 @@ public class BankSoftware {
 	 */
 	public void setAccountBalance(int accountBalance) {
 		accountBalance = accountBalance;
+		System.out.println("You accont Balance is: " + getAccountBalance());
 	}
 
 	/**
@@ -136,7 +137,10 @@ public class BankSoftware {
 	 * @param accountDeposit the accountDeposit to set
 	 */
 	public void setAccountDeposit(int accountDeposit) {
-		accountDeposit = accountDeposit;
+		Scanner depo = new Scanner(System.in);
+		System.out.println("Enter amout you want to deposit: ");
+		int deposit = depo.nextInt();
+		System.out.println("The amout you deposit is: " + deposit);
 	}
 
 	/**
@@ -150,7 +154,9 @@ public class BankSoftware {
 	 * @param checkBalance the checkBalance to set
 	 */
 	public void setCheckBalance() {
-		System.out.println("Your Current Balance is: " + checkBalance);
+		int currentbalance = (int) accountBalance;
+		int Totall = (int) (currentbalance + getAccountBalance());
+		System.out.println("Your Current Balance is: " + Totall);
 	}
 	
 }
